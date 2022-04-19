@@ -1,7 +1,10 @@
 package alipour
 
+import alipour.adapter.BugattiVeyron
+import alipour.adapter.MovableAdapterImpl
 import alipour.builderPattern.User
 import alipour.factoryMethodDesignPattern.FactoryMethod
+import alipour.singleton.Singleton
 
 fun main() {
 
@@ -17,4 +20,10 @@ fun main() {
     val polygon = polygonFactory.getPolygon(8)
     polygon?.getType()
 
+    val singleton = Singleton.getInstance("Hi")
+    singleton?.getOutput()
+
+    val bugattiVeyron = BugattiVeyron()
+    val movableAdapter = MovableAdapterImpl(bugattiVeyron)
+    println("Speed in KMP: "+movableAdapter.getSpeed())
 }
