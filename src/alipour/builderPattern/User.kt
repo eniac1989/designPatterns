@@ -1,6 +1,6 @@
-package alipour
+package alipour.builderPattern
 
-class BuilderPattern private constructor(builder: UserBuilder) {
+class User private constructor(builder: UserBuilder) {
 
     //All getter, and NO setter to provde immutability
     val firstName: String // required
@@ -42,13 +42,13 @@ class BuilderPattern private constructor(builder: UserBuilder) {
         }
 
         //Return the finally consrcuted User object
-        fun build(): BuilderPattern {
-            val user = BuilderPattern(this)
+        fun build(): User {
+            val user = User(this)
             validateUserObject(user)
             return user
         }
 
-        private fun validateUserObject(user: BuilderPattern) {
+        private fun validateUserObject(user: User) {
             //Do some basic validations to check
             //if user object does not break any assumption of system
         }
